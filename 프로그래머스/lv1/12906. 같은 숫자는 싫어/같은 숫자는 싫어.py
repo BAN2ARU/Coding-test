@@ -1,9 +1,7 @@
 def solution(arr):
-    answer = []
-    tmp = 10
-    for i in (arr) :
-        if i == tmp :
+    answer = [arr[0]]
+    for i in (arr[1:]) :
+        if answer[-1] == i :
             continue
         answer.append(i)
-        tmp = i
     return answer
