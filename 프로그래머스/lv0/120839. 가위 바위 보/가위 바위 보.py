@@ -1,10 +1,6 @@
 def solution(rsp):
     answer = ''
-    for v in rsp :
-        if v == '2' :
-            answer += '0'
-        elif v == '0' :
-            answer += '5'
-        else :
-            answer += '2'
+    rsp_dict = {'2':'0', '0':'5', '5':'2'}
+    for r in rsp :
+        answer += rsp_dict[r]
     return answer
