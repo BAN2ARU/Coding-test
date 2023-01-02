@@ -1,3 +1,4 @@
-def solution(price, money, count):
-    answer = price*(count+1) / 2 * count
-    return (answer - money) if answer > money else 0
+def solution(price, money, count):    
+    tmp = price * (count+1) * 0.5 *count - money
+    return tmp if tmp >= 0 else 0
+    
