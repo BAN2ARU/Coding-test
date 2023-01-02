@@ -1,16 +1,10 @@
 def solution(s):
-    cnt = 0
+    answer = []
     zero = 0
-
-    while(True) :
-        if s=='1' :
-            return[cnt, zero]
+    cnt = 0
+    while s != '1' :
         zero += s.count('0')
-        s = len(s.replace('0', ''))
-        tmp = ''
-        while (s>1) :
-            tmp += str(s%2)
-            s = s//2
-        s = '1' + tmp[::-1]
+        s = bin(len(s.replace('0','')))[2:]
         cnt += 1
-        
+
+    return [cnt, zero]
