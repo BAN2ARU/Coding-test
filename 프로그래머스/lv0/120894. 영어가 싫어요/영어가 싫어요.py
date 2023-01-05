@@ -1,13 +1,5 @@
 def solution(numbers):
-    num_dict={'zero':0, 'one':1, 'two':2, 'three':3, 'four':4, 'five':5,
-              'six':6, 'seven':7, 'eight':8, 'nine':9}
-    answer = ''
-    temp = ''
-    for num in numbers :
-        temp += num
-        try :
-            answer += str(num_dict[temp])
-            temp = ''
-        except :
-            pass
-    return int(answer)
+    num_list = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    for i, num in enumerate(num_list) :
+        numbers = numbers.replace(num, str(i))
+    return int(numbers)
