@@ -1,7 +1,7 @@
 def solution(absolutes, signs):
     answer = 0
-    for a,s in zip(absolutes, signs) :
-        if s :
+    for a, b in zip(absolutes, signs) :
+        if b :
             answer += a
         else :
             answer -= a
