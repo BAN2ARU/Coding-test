@@ -1,6 +1,7 @@
 def solution(n):
-    ans = ''
-    while n != 0 :
-        ans += str(n % 3)
-        n = n // 3
-    return int(ans,3)
+    answer = 0
+    tmp = ''
+    while n > 0 :
+        tmp += (str(n % 3))
+        n = n//3
+    return int(tmp, 3)
