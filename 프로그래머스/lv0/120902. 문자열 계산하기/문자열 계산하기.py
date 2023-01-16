@@ -1,3 +1,4 @@
 def solution(my_string):
     my_string = my_string.replace(' - ', ' + -')
-    return sum(map(int, (my_string.split('+'))))
+    my_string = my_string.split('+')
+    return sum([int(i) for i in my_string])
