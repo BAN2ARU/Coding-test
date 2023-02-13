@@ -1,4 +1,4 @@
 def solution(lines):
-    sets = [set(range(line[0], line[1])) for line in lines]
+    lines = [set(range(line[0],line[1])) for line in lines]
 
-    return len((sets[0]&sets[1]) | (sets[1]&sets[2]) | (sets[2]&sets[0]))
+    return len((lines[0]&lines[1]) | (lines[1]&lines[2]) | (lines[2]&lines[0]))
