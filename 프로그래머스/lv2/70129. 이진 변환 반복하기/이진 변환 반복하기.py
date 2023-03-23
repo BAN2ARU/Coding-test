@@ -1,10 +1,9 @@
 def solution(s):
-    answer = []
-    zero = 0
     cnt = 0
-    while s != '1' :
-        zero += s.count('0')
-        s = bin(len(s.replace('0','')))[2:]
+    zero_cnt = 0
+    while (len(s) != 1) :
         cnt += 1
-
-    return [cnt, zero]
+        tmp = s.count('1')
+        zero_cnt += len(s) - tmp
+        s = bin(tmp)[2:]
+    return [cnt, zero_cnt]
