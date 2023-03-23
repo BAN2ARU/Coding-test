@@ -1,4 +1,5 @@
 def solution(numbers):
-    for i, num in enumerate(["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]) :
-        numbers = numbers.replace(num,str(i))
+    num = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    for i, n in enumerate(num) :
+        numbers = numbers.replace(n, str(i))
     return int(numbers)
