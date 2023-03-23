@@ -1,15 +1,10 @@
 def solution(s):
-    a = []
-    b = []
-    
-    for i, value in enumerate(s) :
-        if value == '(' :
-            a.append(i)
+    tmp = list(s[0])
+    for i in s[1:] :
+        if not tmp :
+            tmp.append(i)
+        elif tmp[-1] + i == '()' :
+            tmp.pop()
         else :
-            b.append(i)    
-    if len(a) != len(b) :
-        return False
-    for a_value, b_value in zip(a,b) :
-        if b_value < a_value :
-            return False
-    return True
+            tmp.append(i)
+    return False if len(tmp) else True
