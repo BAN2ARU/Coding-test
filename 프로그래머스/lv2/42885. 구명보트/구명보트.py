@@ -1,12 +1,18 @@
 def solution(people, limit):
-    people = sorted(people, reverse=True)
-    j = len(people) - 1
-    
-    for i in range(len(people)) :
-        if people[i] + people[j] <= limit :
-            j -= 1
-        if i >= j :
-            print(i, j)
+    answer = 0
+    people.sort(reverse=True)
+    b = len(people)-1
+    for a in range(b+1) :
+        if a == b :
+            answer += 1
             break
+        elif a > b :
+            break
+        else :
+            if people[a] + people[b] <= limit :
+                answer += 1
+                b -= 1
+            else :
+                answer += 1
         
-    return i+1
+    return answer
