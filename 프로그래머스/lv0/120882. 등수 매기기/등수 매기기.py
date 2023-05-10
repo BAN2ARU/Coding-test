@@ -1,4 +1,4 @@
 def solution(score):
     score = [sum(s) for s in score]
-    s_score = sorted(score, reverse=True)
-    return [s_score.index(i)+1 for i in score]
+    score_sum = sorted(score, reverse=True)
+    return [score_sum.index(s)+1 for s in score]
