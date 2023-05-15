@@ -1,9 +1,9 @@
 def solution(board):
-    n = len(board)
-    danger = set()
-    for i, row in enumerate(board) :
-        for j, x in enumerate(row) :
-            if not x :
-                continue
-            danger.update((i+di, j+dj)for di in [-1,0,1] for dj in [-1, 0, 1])
-    return n*n - sum(0<=i<n and 0<=j<n for i,j in danger)
+    answer = set()
+    for i, n in enumerate(board) :
+        for j, m in enumerate(board[i]) :
+            if m :
+                answer.update([(i+a, j+b) for a in [-1,0,1] for b in [-1, 0, 1]])
+    l = len(board)
+
+    return l*l - len([(i,j) for (i, j) in answer if(0<=i<l and 0<=j<l) ])
