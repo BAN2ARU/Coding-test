@@ -1,3 +1,2 @@
 def solution(array, n):
-    array.sort(key = lambda x: (abs(n-x), x))
-    return array[0]
+    return sorted(array, key=lambda x : (abs(x-n), x))[0]
