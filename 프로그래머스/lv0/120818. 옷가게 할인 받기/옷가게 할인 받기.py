@@ -1,5 +1,7 @@
 def solution(price):
-    cloth = {500000:0.8, 300000:0.9, 100000:0.95, 0:1}
-    for cost, rate in cloth.items() :
-        if price >= cost :
-            return int(price * rate)
+    discount = {500000:0.8, 300000:0.9, 100000:0.95}
+    
+    for dis_price, dis_rate in discount.items() :
+        if price >= dis_price :
+            return int(price*dis_rate)
+    return price
