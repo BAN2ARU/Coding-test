@@ -1,13 +1,13 @@
 def solution(people, limit):
     people.sort(reverse=True)
-    answer = 0
     l = len(people)
     b = l-1
-    for a in range(l) :
-        if a >= b :
+    a = 0
+    for i in range(l) :
+        if i >=b :
             break
-        else :
-            if people[a] + people[b] <= limit :
-                b -= 1
-                answer += 1
-    return l-answer
+        elif people[i]+people[b] <= limit :
+            b -= 1
+            a += 1
+    
+    return l-a
