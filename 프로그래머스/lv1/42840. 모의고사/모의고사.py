@@ -1,24 +1,24 @@
 def solution(answers):
-    one = [1,2,3,4,5]    
+    answer = [0,0,0]
+    one = [1,2,3,4,5]
     two = [2,1,2,3,2,4,2,5]
     thr = [3,3,1,1,2,2,4,4,5,5]
     
-    l1, l2, l3 = len(one), len(two), len(thr)
-    rank = [0, 0, 0]
+    len_one, len_two, len_thr = len(one), len(two), len(thr)
     
-    for i, ans in enumerate(answers) :
-        if ans == one[i%l1] :
-            rank[0] += 1
-        if ans == two[i%l2] :
-            rank[1] += 1
-        if ans == thr[i%l3] :
-            rank[2] += 1
-
-    answer = list()
-    first = max(rank)
+    for i, a in enumerate(answers) :
+        if a == one[i%len_one] :
+            answer[0] += 1
+        if a == two[i%len_two] :
+            answer[1] += 1
+        if a == thr[i%len_thr] :
+            answer[2] += 1
     
-    for i, n in enumerate(rank) :
-        if n == first :
-            answer.append(i+1)
+    max_num = max(answer)
+    ans = list()
     
-    return answer
+    for i, a in enumerate(answer) :
+        if a == max_num :
+            ans.append(i+1)
+    
+    return ans
