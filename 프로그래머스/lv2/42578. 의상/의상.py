@@ -1,13 +1,15 @@
 def solution(clothes):
-    clo_dicts = dict()
+    clo_dict = dict()
     
-    for a,b  in clothes :
+    for a, b in clothes :
         try :
-            clo_dicts[b] += 1
+            clo_dict[b] += 1
         except :
-            clo_dicts[b] = 2
+            clo_dict[b] = 2
     
     answer = 1
-    for i in clo_dicts.values() :
-        answer = answer*i
+    
+    for i in clo_dict.values() :
+        answer *= i 
+    
     return answer-1
