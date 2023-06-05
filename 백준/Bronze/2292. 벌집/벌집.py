@@ -2,11 +2,10 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
+num, cnt = 1, 1
 
-cnt, num = 1, 1
-
-while(n > num) :
+while (n > num) :
+    num = num + 6*cnt
     cnt += 1
-    num += 6*(cnt-1)
 
 print(cnt)
