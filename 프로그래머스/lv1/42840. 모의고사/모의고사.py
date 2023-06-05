@@ -1,24 +1,22 @@
 def solution(answers):
-    answer = [0,0,0]
-    one = [1,2,3,4,5]
-    two = [2,1,2,3,2,4,2,5]
-    thr = [3,3,1,1,2,2,4,4,5,5]
+    one = '12345'
+    two = '21232425'
+    thr = '3311224455'
+    l1, l2, l3 = len(one), len(two), len(thr)
+    ans = [0, 0, 0]
     
-    len_one, len_two, len_thr = len(one), len(two), len(thr)
+    for i, n in enumerate(answers) :
+        if n == int(one[i%l1]) :
+            ans[0] += 1
+        if n == int(two[i%l2]) :
+            ans[1] += 1
+        if n == int(thr[i%l3]) :
+            ans[2] += 1
+    max_n = max(ans)
+    answer = list()
     
-    for i, a in enumerate(answers) :
-        if a == one[i%len_one] :
-            answer[0] += 1
-        if a == two[i%len_two] :
-            answer[1] += 1
-        if a == thr[i%len_thr] :
-            answer[2] += 1
+    for i, n in enumerate(ans) :
+        if n == max_n :
+            answer.append(i+1)
     
-    max_num = max(answer)
-    ans = list()
-    
-    for i, a in enumerate(answer) :
-        if a == max_num :
-            ans.append(i+1)
-    
-    return ans
+    return answer
