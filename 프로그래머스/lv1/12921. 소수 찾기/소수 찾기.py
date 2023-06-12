@@ -1,7 +1,6 @@
 def solution(n):
-    num_set = set(range(2, n+1))
-    
-    for i in range(2, n+1) :
-        if i in num_set :
-            num_set -= set(range(i*2,n+1,i))
-    return len(num_set)
+    num = set(range(2, n+1))
+    for i in range(n+1) :
+        if i in num :
+            num -= set(range(i*2, n+1, i))
+    return len(num)
