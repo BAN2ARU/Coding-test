@@ -1,25 +1,25 @@
 def solution(answers):
+    answer = [0, 0, 0]
     one = '12345'
     two = '21232425'
     thr = '3311224455'
-    l_one = len(one)
-    l_two = len(two)
-    l_thr = len(thr)
-    answer = [0, 0, 0]
+    len_1 = len(one)
+    len_2 = len(two)
+    len_3 = len(thr)
     
     for i, ans in enumerate(answers) :
-        if ans == int(one[i%l_one]) :
+        if int(one[i%len_1]) == ans :
             answer[0] += 1
-        if ans == int(two[i%l_two]) :
+        if int(two[i%len_2]) == ans :
             answer[1] += 1
-        if ans == int(thr[i%l_thr]) :
+        if int(thr[i%len_3]) == ans :
             answer[2] += 1
     
-    correct = list()
     max_n = max(answer)
+    ans = list()
     
     for i, n in enumerate(answer) :
-        if max_n == n :
-            correct.append(i+1)
+        if n == max_n :
+            ans.append(i+1)
     
-    return correct
+    return ans
